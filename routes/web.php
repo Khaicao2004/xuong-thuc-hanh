@@ -1,6 +1,8 @@
 <?php
 
+use App\Events\OrderShipped;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DataController::class, 'index']);
+// Route::get('/', [DataController::class, 'index']);
+// Route::get('/', function(){
+//     OrderShipped::dispatch('pkok');
+//     dd(1);
+// });
+Route::resource('orders', OrderController::class);
